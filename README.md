@@ -4,7 +4,13 @@
 
 **Program Language : Python**
 
->문제 : 삼성 SW 역량평가, 카카오 코드 페스티벌, 코드잼
+>문제 : 삼성 SW 역량평가, 카카오 코드 페스티벌, 코드잼  
+
+
+#### 문제 링크  
+**삼성** : https://www.acmicpc.net/workbook/view/1152  
+**카카오** : https://www.acmicpc.net/category/428  
+**코드잼** : https://codingcompetitions.withgoogle.com/codejam/archive  
 
 1주차 : 나무재테크, 아기상어 | 프로도의 100일 준비 | 2018년 Practice Session #1  
 2주차 : 인구 이동, 큐빙 | 음악 추천 | 2018년 Practice Session #2  
