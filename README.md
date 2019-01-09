@@ -13,7 +13,7 @@
 **프로그래머스** : https://programmers.co.kr/learn/challenges  
 **코드잼** : https://codingcompetitions.withgoogle.com/codejam/archive  
 
-*(완료)*
+*(완료)*  
 1주차 : 아기상어 (삼성) | 프로도의 100일 준비 (카카오)  
 2주차 : 인구 이동 (삼성) | 체육복, 카펫 (프로그래머스)  
 ***
