@@ -1,8 +1,7 @@
 package programmers;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class main {
 
@@ -11,205 +10,136 @@ public class main {
 		Solution test = new Solution();
 		
 		int answer[] = {};
-		answer = test.solution(new String[] {"classic", "pop", "classic", "pop", "classic", "classic"}, new int[] {400,600,150,2500,500,500});
+		answer = test.solution(new String[] {"classic", "pop", "classic", "classic", "pop", "zazz", "zazz"}, new int[] {500, 600, 150, 800, 2500, 2100, 1000});		
 		
 		for(int i = 0; i<answer.length; i++) {
 			System.out.println(answer[i]);
 		}
 	}
-
 }
 
-	
 class Solution {
-	ArrayList<MusicInfo> list = new ArrayList<MusicInfo>();
-	Boolean exist = false;
+	
+	ArrayList<Music> album = new ArrayList<Music>();
+	ArrayList<Integer> answer_Temp = new ArrayList<Integer>();
 	
     public int[] solution(String[] genres, int[] plays) {
         int[] answer = {};
-        int[] genre_filter = new int[2];
+        boolean exist = false;
+
+        Music temp = new Music();
+        temp.genre = genres[0];
+        temp.play = plays[0];
         
-		MusicInfo temp2 = new MusicInfo();
-		temp2.setFirst(0);
-		temp2.setSecond(-1);
-		temp2.setGenre(genres[0]);
-		temp2.setTotal(plays[0]);
-		list.add(temp2);
+        album.add(temp);
         
-        for(int i = 1; i<genres.length;i++) {
-        	for(int j = 0; j<list.size(); j++) {
-        		if(list.get(j).getGenre().equals(genres[i])) {
+        /* 장르별 총 재생수 합 구하기 */
+        for(int i = 1 ; i<genres.length;i++) {
+        	for(int j = 0; j <album.size(); j++) {
+        		if(genres[i].equals(album.get(j).genre)) {
+        			Music temp2 = new Music();
+        			temp2.genre = album.get(j).genre;
+        			temp2.play = album.get(j).play + plays[i];
+        			album.set(j,temp2);
         			exist = true;
-        			MusicInfo temp = new MusicInfo();
-        			temp.setGenre(genres[i]);
-        			temp.setTotal(list.get(j).getTotalListen()+plays[i]);
-        			
-        			if(list.get(j).getSecond() == -1) {
-        				if(list.get(j).getFirst() == -1) {
-        					temp.first = i;
-        					temp.second = -1;
-        				}
-        				else {
-        					if(plays[list.get(j).getFirst()]<plays[i]) {
-        						temp.second = list.get(j).getFirst();
-        						temp.first = i;
-        					}
-        					else if(plays[list.get(j).getFirst()]==plays[i]) {
-        						if(list.get(j).getFirst()>i) {
-        							temp.second = list.get(j).getFirst();
-            						temp.first = i;
-        						}
-        						else {
-        							temp.second = i;
-            						temp.first = list.get(j).getFirst();
-        						}
-        					}
-        					else {
-        						temp.second = i;
-        						temp.first = list.get(j).getFirst();
-        					}
-        				}
-        			}
-        			else {
-        				if(plays[list.get(j).getSecond()]<=plays[i]) {
-        					if(list.get(j).getSecond() < i && plays[list.get(j).getSecond()]==plays[i]) {
-        						temp.second = list.get(j).getSecond();
-        					}
-        					else {
-        						temp.second = i;
-        					}
-        				}
-        				if(plays[list.get(j).getFirst()]<=plays[i]) {
-        					if(list.get(j).getFirst() < i && plays[list.get(j).getFirst()]==plays[i]) {
-        						temp.second = i; 
-        						temp.first = list.get(j).getFirst();
-        					}
-        					else {
-        						temp.second = list.get(j).getFirst();
-        						temp.first = i;	
-        					}
-    					}
-        			}
-        			list.set(j, temp);
         		}
         	}
-        	if(!exist) {
-        		MusicInfo temp = new MusicInfo();
-        		temp.setFirst(i);
-        		temp.setSecond(-1);
-        		temp.setGenre(genres[i]);
-        		temp.setTotal(plays[i]);
-        		list.add(temp);
-        	}
-        	exist = false;
+    		if(!exist) {
+    			Music temp2 = new Music();
+    			temp2.genre = genres[i];
+    			temp2.play = plays[i];
+    			album.add(temp2);
+    		}
+			exist = false;
         }
-        ArrayList<Integer> answerList = new ArrayList<Integer>();
         
-        if(list.size()==1) {
-        	if(list.get(0).getSecond() != -1) {
-        		answer = new int[] {list.get(0).getFirst(),list.get(0).getSecond()};
-	    	}
-	    	else {
-	    		answer = new int[] {list.get(0).getFirst()};
-	    	}
-        }
-        else {
-	        int[] total = new int[list.size()];
-	        for(int i = 0; i<list.size();i++) {
-	        	total[i] = list.get(i).getTotalListen();
-	        }
-	        Arrays.sort(total);
-	        for(int i = total.length-1; i>=0; i--) {
-	        	for(int j = 0; j <list.size(); j++) {
-	        		if(list.get(j).getTotalListen() == total[i]) {
-	        			answerList.add(list.get(j).getFirst());
-	        			if(list.get(j).getSecond() != -1) {
-	        				answerList.add(list.get(j).getSecond());
-	        			}
-	        		}
-	        	}
-	        }
-        }
-
-        int[] answer2 = new int[answerList.size()];
+        DescendingSort desc = new DescendingSort();
+        Collections.sort(album, desc);
         
-        for (int i = 0; i<answerList.size();i++) {
-        	answer2[i] = answerList.get(i);
-        }
-        answer = answer2;
+        for(int i = 0; i<album.size();i++) find_top_two(album.get(i).genre,genres,plays);
+        
+        int[] aTemp = new int[answer_Temp.size()];
+        
+        for(int i =0;i<answer_Temp.size();i++) { aTemp[i] = answer_Temp.get(i);}
+        
+        answer = aTemp;
         
         return answer;
     }
     
-    public int[] bestTwo() {
-    	int[] answer = {};
+    public void find_top_two(String genre, String[] genres, int[] plays) {
     	int first = -1;
     	int second = -1;
     	
-    	for(int i = 0; i<list.size();i++) {
-    		if(i == 0) {
-    			first = 0;
-    		}
-    		else if(i == 1) {
-    			if(list.get(0).getTotalListen() < list.get(1).getTotalListen()) {
-    				first = 1;
-    				second = 0;
+    	for(int i = 0; i<genres.length; i++) {
+    		if(genre.equals(genres[i])) {
+    			if(second == -1) {
+    				if(first == -1) first = i; // 하나도 없을 때
+    				else { // first는 있을 때
+    					if(plays[first] < plays[i]) { // 1개 있을 때 찾은게 더 큼
+    						second = first;
+    						first = i;
+    					}
+    					else if(plays[first] == plays[i]) { // first랑 같을 때
+    						if(first > i) { // first랑 같은 데 고유 번호가 찾은 게 더 낮음
+    							second = first;
+    							first = i;
+    						}
+    						else { // 고유 번호가 찾은 게 더 큼
+    							second = i;
+    						}
+    					}
+    					else second = i;
+    				}
     			}
-    			else {
-    				first = 0;
-    				second = 1;
-    			}
-    		}
-    		else {
-    			if(list.get(second).getTotalListen() < list.get(i).getTotalListen()) {
-    				second = i;
-    			}
-    			if(list.get(first).getTotalListen() < list.get(i).getTotalListen()) {
-    				second = first;
-    				first = i;
+    			else { // 2개다 찾아 져있을 때
+    				if(plays[second] < plays[i]) {
+    					second = i;
+    				}
+    				else if(plays[second]==plays[i]) {
+    					if(second > i) {
+    						second = i;
+    					}
+    				}else {}
+    				
+    				if(plays[first] < plays[i]) {
+    					second = first;
+    					first = i;
+    				}else if(plays[first] == plays[i]) {
+    					if(first > i) {
+    						second = first;
+    						first = i;
+    					}
+    				}else {}
     			}
     		}
     	}
-    	answer = new int[] {first,second};
-    	return answer;
+    	if(first != -1) answer_Temp.add(first);
+    	if(second != -1) answer_Temp.add(second);
     }
-}
     
-class MusicInfo{
+}
+
+class Music {
 	String genre;
-	int total_listen = 0;
-	int first = -1;
-	int second = -1;
+	Integer play;
 	
-	public String getGenre() {
-		return genre;
+	Music(){
+		
 	}
 	
-	public int getTotalListen() {
-		return total_listen;
-	}
-	
-	public int getFirst() {
-		return first;
-	}
-	
-	public int getSecond() {
-		return second;
-	}
-	
-	public void setGenre(String genre) {
+	Music(String genre, Integer play){
 		this.genre = genre;
+		this.play = play;
+	}
+}
+
+class DescendingSort implements Comparator<Music>{
+
+	@Override
+	public int compare(Music o1, Music o2) {
+		// TODO Auto-generated method stub
+		return o2.play.compareTo(o1.play);
 	}
 	
-	public void setTotal(int total) {
-		total_listen = total;
-	}
-	
-	public void setFirst(int first) {
-		this.first = first;
-	}
-	
-	public void setSecond(int second) {
-		this.second = second;
-	}
 }
