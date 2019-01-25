@@ -28,6 +28,7 @@ class Solution {
         for(int i = 0; i < length; i++){
             if(citations[i] >=  length - i){
             	answer = length-i;
+		break;
             }
         }
 
