@@ -72,12 +72,12 @@
 
 
 #### @화요일
-**[다음시간]** 프로그래머스
-H-index(https://programmers.co.kr/learn/courses/30/lessons/42747)- level2
-예산 (https://programmers.co.kr/learn/courses/30/lessons/43237) - level3
+**[다음시간]** 프로그래머스 문제 풀기
+- H-index(https://programmers.co.kr/learn/courses/30/lessons/42747)- level2
+- 예산 (https://programmers.co.kr/learn/courses/30/lessons/43237) - level3
 
-
-5주차
-@토요일
-[다음시간] 수요일 12시 학교
-도둑질 : https://programmers.co.kr/learn/courses/30/lessons/42897 - level 4
+(예정)
+#### 5주차
+#### @토요일
+**[다음시간]** 수요일 12시 학교
+- 도둑질 : https://programmers.co.kr/learn/courses/30/lessons/42897 - level 4
