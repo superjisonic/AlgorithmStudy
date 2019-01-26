@@ -30,3 +30,54 @@
 10주차 : 뱀 / 2048 | 보물 상자 열기  
 11주차 : 카카오 코드 페스티벌 예선 남은 문제 | 섬  
 12주차 : 카카오 코드 페스티벌 남은 문제 | 뒤집기  
+
+-------------------
+
+### Study Log
+
+
+#### 1주차 마무리 @신촌
+
+*아기상어와 프로도의 100일 접근법 연습*
+
+**[다음시간]** 프로그래머스 level1,level2 한문제씩 풀어보기 
+- 체육복 (https://programmers.co.kr/learn/courses/30/lessons/42862) - 그리디, level1
+- 카펫 (https://programmers.co.kr/learn/courses/30/lessons/42842) - 완전탐색, level2
+삼성문제 접근법 생각해오기(동규는 코드까지 짜오기)
+
+
+#### 2주차
+
+#### @화요일
+
+**[다음시간]** 프로그래머스 문제 풀기
+- 소수찾기 (https://programmers.co.kr/learn/courses/30/lessons/42839) - level2
+- 단어변환 (https://programmers.co.kr/learn/courses/30/lessons/43163) - level3
+- 카카오 음악찾기 알고리즘 생각해오기
+- 소수의 합찾기 제곱부분 생각해오기 (효율성) * ps. 동규 생각엔 2중 for문 없애야 할듯
+
+#### 3주차
+#### @월요일
+
+**[다음시간]** 전 주에 다 못푼문제 마저 풀기 (소수찾기, 단어변환, 소수의 합문제)
+- 베스트앨범 (https://programmers.co.kr/learn/courses/30/lessons/42579) - level3
+- 더 맵게 (https://programmers.co.kr/learn/courses/30/lessons/42626) - level2
+- 카카오 음악찾기 알고리즘 (다시)
+
+#### 4주차
+#### @금요일
+**[다음시간]** 프로그래머스 문제 풀기
+- 프린터 (https://programmers.co.kr/learn/courses/30/lessons/42587) - level2
+- 정수 삼각형 (https://programmers.co.kr/learn/courses/30/lessons/43105) - level3
+
+
+#### @화요일
+**[다음시간]** 프로그래머스
+H-index(https://programmers.co.kr/learn/courses/30/lessons/42747)- level2
+예산 (https://programmers.co.kr/learn/courses/30/lessons/43237) - level3
+
+
+5주차
+@토요일
+[다음시간] 수요일 12시 학교
+도둑질 : https://programmers.co.kr/learn/courses/30/lessons/42897 - level 4
