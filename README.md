@@ -40,7 +40,7 @@
 
 *아기상어와 프로도의 100일 접근법 연습*
 
-**[다음시간]** 프로그래머스 level1,level2 한문제씩 풀어보기 
+**[다음시간]** 프로그래머스 level1,level2 한문제씩 풀어보기
 - 체육복 (https://programmers.co.kr/learn/courses/30/lessons/42862) - 그리디, level1
 - 카펫 (https://programmers.co.kr/learn/courses/30/lessons/42842) - 완전탐색, level2
 삼성문제 접근법 생각해오기(동규는 코드까지 짜오기)
@@ -76,8 +76,25 @@
 - H-index(https://programmers.co.kr/learn/courses/30/lessons/42747)- level2
 - 예산 (https://programmers.co.kr/learn/courses/30/lessons/43237) - level3
 
-(예정)
 #### 5주차
 #### @토요일
 **[다음시간]** 수요일 12시 학교
 - 도둑질 : https://programmers.co.kr/learn/courses/30/lessons/42897 - level 4
+
+
+#### @수요일
+[다음시간] 목요일 2/7 15시 행아웃
+- 도둑질 다시 복기하기
+- 방금그곡 : https://programmers.co.kr/learn/courses/30/lessons/17683 - 캐캐오
+
+#### 6주차
+#### @일요일
+- 오픈 채팅 : https://programmers.co.kr/learn/courses/30/lessons/42888 - carKㅏO
+- n진수 게임 : https://programmers.co.kr/learn/courses/30/lessons/17687 - kaca5
+
+
+#### @목요일
+오늘은 즐겁게 초콜렛 먹방을 하였읍니다
+다음시간까지는
+- 프렌즈 4블록 : https://programmers.co.kr/learn/courses/30/lessons/17679 - kar까5
+- 실패율 : https://programmers.co.kr/learn/courses/30/lessons/42889 - cakaㅇ
