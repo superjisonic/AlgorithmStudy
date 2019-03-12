@@ -77,10 +77,9 @@
 - 예산 (https://programmers.co.kr/learn/courses/30/lessons/43237) - level3
 
 #### 5주차
-#### @토요일
+#### @토요일 1월 30일!
 **[다음시간]** 수요일 12시 학교
 - 도둑질 : https://programmers.co.kr/learn/courses/30/lessons/42897 - level 4
-- 지선이 프랑스에 간 관계로 불참 엉엉엉) -* 나중에 풀자 지선아!
 
 
 #### @수요일
