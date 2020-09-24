@@ -125,9 +125,16 @@
 * 문자열 압축 : 프로그래머스 2단계
  > StringCompressor.java
 
+#### @9월 3주차
+
+###### **[카카오]**
 * 오픈채팅 : 프로그래머스 2단계
  > OpenChat.java
 
+###### **[Programmers]**
+* 네트워크 : 프로그래머스 3단계
+ > DFS(깊이우선탐색)
+ > Network.java
 
 
 
